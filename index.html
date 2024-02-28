@@ -3,26 +3,52 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel ="stylesheet" href = "./assets/reset.css">
-    <link rel ="stylesheet" href = "./assets/style.css">
+    <link rel ="stylesheet" href = "assets/css/reset.css">
+    <link rel ="stylesheet" href = "assets/css/style.css">
     <title>Coding Game Quiz Challenge</title>
 </head>
 <body>
 
-
-    <header> 
-        <h1> WebAPI: Coding Game Quiz <h1> 
+   <header> 
+        <h1 class="header">WebAPI: Coding Game Quiz</h1> 
+        <a href = "./highscore.html"> High Score </a>
             
     </header> 
+     <main>
+        <header>
+            <div id="startContainer" class="container">
+                <h2 class="codeQuizTitle">Welcome to the Coding Quiz!</h2>
+                <p class="quizInstructions">
+                    <br>Answer as many questions as possible within the time limit.<br>
+                    <br><br> Rules: <br>
+                    Your score is based on how much time you have left.<br><br>
+                    *Right answers +10 seconds<br> 
+                    *Wrong answers -10 seconds<br> <br> 
+                    Good luck.</p>
+                <button id="startBtn" class="btn">Start Quiz</button>
+            </div>
+            <div id="quizContainer" class="container" style="display: none;">
+                <div id="questionContainer" class="container">
+                    <h2 id="questions" class="question"></h2>
+                    <ul id="choices" class="choices"></ul>
+                </div>
+                <div id="timerContainer" class="container">
+                    <p>Time Left: <span id="timer" class="timer">100</span></p>
+                </div>
+            </div>
+            <div id="gameOver" class="container" style="display: none;">
+                <h2 class="timeUp">Times Up!</h2>
+                <p>Final score: <span id="finalScore"></span></p>
+                <label class="lable" for="initials">Enter your initials:</label>
+                <input type="text" id="initials" placeholder="Your initials">
+                <button id="saveScoreBtn" class="btn">Save Score</button>
+            </div>
+        </header>
 
-    <nav> 
-        <button  id = "startButton" > Start </button>
+    </main>
 
-        <button  id = "highScore" > High Score </button>
+    <script src ="./assets/js/questions.js"></script>
+    <script src ="./assets/js/logic.js"></script>
 
-        <div id = "timerButton" > Timer: <span id = "timerunningOut" > 00 </span> </div>
-    </nav>
-
-    <script scr ="./logic.js"></script>
 </body>
 </html>
